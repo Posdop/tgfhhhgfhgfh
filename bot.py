@@ -10,6 +10,18 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 import asyncio
 from datetime import datetime
+import sys
+import subprocess
+
+# Принудительно устанавливаем aiogram при запуске
+try:
+    from aiogram import Bot, Dispatcher, types
+except ImportError:
+    print("Устанавливаю aiogram...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "aiogram==3.17.0"])
+    from aiogram import Bot, Dispatcher, types
+
+# Остальной код бота...
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
