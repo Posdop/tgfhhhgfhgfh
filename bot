@@ -1,0 +1,2 @@
+git checkout -b bot
+git push origin bot
